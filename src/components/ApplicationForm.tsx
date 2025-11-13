@@ -1,135 +1,82 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/hooks/use-toast";
-import { Send } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 const ApplicationForm = () => {
-  const { toast } = useToast();
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    vehicle: "",
-    message: "",
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast({
-      title: "Application Received",
-      description: "Jason will contact you within 24 hours.",
-    });
-    setFormData({ name: "", email: "", phone: "", vehicle: "", message: "" });
-  };
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const handleApplyNow = () => {
+    // Trigger AskAva modal
+    if (window.AskAva) {
+      window.AskAva.openModal();
+    }
   };
 
   return (
-    <section className="py-24 bg-background" id="apply">
-      <div className="container mx-auto px-6">
-        <div className="max-w-3xl mx-auto">
+    <section className="py-24 bg-gradient-dark relative overflow-hidden" id="apply">
+      {/* Decorative Background Elements */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute top-20 left-20 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-pulse-glow" />
+        <div className="absolute bottom-40 right-20 w-80 h-80 bg-primary/30 rounded-full blur-3xl animate-float" />
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Start Your Application
+            <h2 className="text-4xl md:text-6xl font-black text-background mb-6 tracking-tight">
+              Ready to Get <span className="text-transparent bg-clip-text bg-gradient-accent">Pre-Approved?</span>
             </h2>
-            <p className="text-xl text-muted-foreground">
-              No impact to your credit score. No obligation.
+            <p className="text-xl md:text-2xl text-silver mb-8 font-medium">
+              Start your application with Jason in minutes — no credit impact, no obligation.
             </p>
           </div>
 
-          <form
-            onSubmit={handleSubmit}
-            className="bg-card rounded-lg border border-border p-8 shadow-card space-y-6 animate-scale-in"
-          >
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="space-y-2">
-                <Label htmlFor="name">Full Name</Label>
-                <Input
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  placeholder="John Sarac"
-                />
+          {/* Trust Indicators */}
+          <div className="bg-black/60 backdrop-blur-sm rounded-2xl border-2 border-accent/20 p-8 md:p-12 mb-8 animate-scale-in">
+            <div className="grid md:grid-cols-3 gap-6 mb-8">
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="text-accent flex-shrink-0 mt-1" size={24} />
+                <div>
+                  <p className="text-background font-bold mb-1">No Hard Credit Check</p>
+                  <p className="text-silver/80 text-sm">Won't affect your credit score</p>
+                </div>
               </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  placeholder="john@example.com"
-                />
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="text-accent flex-shrink-0 mt-1" size={24} />
+                <div>
+                  <p className="text-background font-bold mb-1">100% Confidential</p>
+                  <p className="text-silver/80 text-sm">Your information stays private</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="text-accent flex-shrink-0 mt-1" size={24} />
+                <div>
+                  <p className="text-background font-bold mb-1">Personal Review</p>
+                  <p className="text-silver/80 text-sm">Jason reviews every application</p>
+                </div>
               </div>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="space-y-2">
-                <Label htmlFor="phone">Phone Number</Label>
-                <Input
-                  id="phone"
-                  name="phone"
-                  type="tel"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  required
-                  placeholder="(416) 555-0123"
-                />
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="vehicle">Vehicle Interest (Optional)</Label>
-                <Input
-                  id="vehicle"
-                  name="vehicle"
-                  value={formData.vehicle}
-                  onChange={handleChange}
-                  placeholder="e.g., BMW 5 Series"
-                />
-              </div>
+            {/* AskAva CTA Banner */}
+            <div className="mb-6">
+              <div className="AskAva-cta" data-product="creditTool" data-type="banner"></div>
             </div>
 
-            <div className="space-y-2">
-              <Label htmlFor="message">Tell Jason About Your Situation</Label>
-              <Textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                placeholder="Credit challenges, budget, what you're looking for..."
-                rows={5}
-              />
-            </div>
-
-            <div className="bg-muted/50 rounded-lg p-4 text-sm text-muted-foreground">
-              <p className="mb-2">
-                ✓ No hard credit check until you're ready
-              </p>
-              <p className="mb-2">
-                ✓ Your information is kept confidential
-              </p>
-              <p>
-                ✓ Jason personally reviews every application
+            <div className="text-center">
+              <Button 
+                variant="premium" 
+                size="xl" 
+                className="group relative overflow-hidden w-full md:w-auto"
+                onClick={handleApplyNow}
+              >
+                <span className="relative z-10 flex items-center justify-center">
+                  Start Your Pre-Approval Now
+                  <ArrowRight className="ml-2 group-hover:translate-x-2 transition-transform duration-300" />
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-gold-light to-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </Button>
+              <p className="text-silver/70 text-sm mt-4 italic">
+                Get approved in minutes • Financing up to $75,000 • Bad credit specialists
               </p>
             </div>
-
-            <Button type="submit" variant="premium" size="lg" className="w-full">
-              <Send className="mr-2" />
-              Submit Application
-            </Button>
-          </form>
+          </div>
         </div>
       </div>
     </section>
