@@ -30,13 +30,18 @@ const advantages = [
 
 const SaracAdvantage = () => {
   return (
-    <section className="py-24 bg-background">
-      <div className="container mx-auto px-6">
+    <section className="py-24 bg-gradient-dark relative overflow-hidden">
+      {/* Decorative Grid */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="h-full w-full" style={{ backgroundImage: 'linear-gradient(hsl(43 96% 56% / 0.1) 1px, transparent 1px), linear-gradient(90deg, hsl(43 96% 56% / 0.1) 1px, transparent 1px)', backgroundSize: '50px 50px' }} />
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            The Sarac Advantage
+          <h2 className="text-4xl md:text-6xl font-black text-background mb-4 tracking-tight">
+            The Sarac <span className="text-transparent bg-clip-text bg-gradient-accent">Advantage</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl text-silver max-w-2xl mx-auto font-medium">
             Why Jason closes deals others cannot
           </p>
         </div>
@@ -47,16 +52,16 @@ const SaracAdvantage = () => {
             return (
               <div
                 key={index}
-                className="group p-8 bg-card rounded-lg border border-border hover:border-accent/50 hover:shadow-card transition-all duration-300 animate-fade-in-up"
+                className="group p-8 bg-black/60 backdrop-blur-sm rounded-lg border-2 border-accent/20 hover:border-accent hover:shadow-glow transition-all duration-300 animate-fade-in-up hover:scale-105"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <div className="w-14 h-14 bg-gradient-primary rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <Icon className="w-7 h-7 text-primary-foreground" />
+                <div className="w-16 h-16 bg-gradient-accent rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-glow">
+                  <Icon className="w-8 h-8 text-black" />
                 </div>
-                <h3 className="text-xl font-semibold text-foreground mb-3">
+                <h3 className="text-xl font-bold text-background mb-3 group-hover:text-accent transition-colors">
                   {advantage.title}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-silver/80 leading-relaxed group-hover:text-silver transition-colors">
                   {advantage.description}
                 </p>
               </div>
