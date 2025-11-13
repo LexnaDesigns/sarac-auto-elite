@@ -14,7 +14,11 @@ const Footer = () => {
             <p className="text-xl text-primary-foreground/80 mb-8">
               Jason takes a limited number of clients each month to keep approvals fast and personal. Apply now to secure your spot.
             </p>
-            <Button variant="premium" size="xl">
+            <Button 
+              variant="premium" 
+              size="xl"
+              onClick={() => window.AskAva?.openModal()}
+            >
               Apply Today
             </Button>
           </div>

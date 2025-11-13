@@ -1,8 +1,9 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Phone } from "lucide-react";
+import { ArrowRight, Phone, CheckCircle2 } from "lucide-react";
 import { useEffect, useRef } from "react";
 import heroImage from "@/assets/hero-bg.jpg";
 import heroVideo from "@/assets/FINALEDIT1.mp4";
+import jasonProfessional from "@/assets/jason-professional.jpeg";
 
 const Hero = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -36,8 +37,15 @@ const Hero = () => {
     };
   }, []);
 
+  const handleApplyNow = () => {
+    // Trigger AskAva modal
+    if (window.AskAva) {
+      window.AskAva.openModal();
+    }
+  };
+
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-black">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-black pt-20">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-20 left-20 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-pulse-glow" />
@@ -47,7 +55,7 @@ const Hero = () => {
       {/* Background Video (hidden on mobile) */}
       <video
         ref={videoRef}
-        className="absolute inset-0 w-full h-full object-cover opacity-45 pointer-events-none z-0 hidden md:block"
+        className="absolute inset-0 w-full h-full object-cover opacity-40 pointer-events-none z-0 hidden md:block"
         playsInline
         autoPlay
         muted
@@ -66,59 +74,92 @@ const Hero = () => {
       </div>
 
       {/* Overlay for readability */}
-      <div className="absolute inset-0 z-[1] bg-gradient-to-r from-black/60 via-black/50 to-black/40" />
+      <div className="absolute inset-0 z-[1] bg-gradient-to-r from-black/80 via-black/60 to-transparent" />
 
       {/* Content */}
       <div className="container relative z-10 mx-auto px-6 py-20">
-        <div className="max-w-3xl animate-fade-in-up">
-          <div className="mb-6 inline-block animate-pulse-glow">
-            <span className="px-6 py-2 bg-gradient-accent text-black border-2 border-accent rounded-full text-sm font-bold tracking-widest uppercase shadow-glow">
-              Elite Subprime Specialist
-            </span>
-          </div>
-          
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-background mb-6 leading-tight tracking-tight">
-            The Deal Starts When<br />
-            <span className="text-transparent bg-clip-text bg-gradient-accent">Everyone Else Says No.</span>
-          </h1>
-          
-          <p className="text-xl md:text-2xl text-silver mb-10 leading-relaxed font-medium">
-            Bad credit, new credit, bruised credit — <span className="text-accent font-bold">Jason still gets it done.</span>
-          </p>
-
-          {/* AskAva CTA Banner */}
-          <div className="mb-8">
-            <div className="AskAva-cta" data-product="creditTool" data-type="banner"></div>
-          </div>
-
-          <div className="flex flex-col sm:flex-row gap-4 mb-8">
-            <Button variant="premium" size="xl" className="group relative overflow-hidden">
-              <span className="relative z-10 flex items-center">
-                Apply Now
-                <ArrowRight className="ml-2 group-hover:translate-x-2 transition-transform duration-300" />
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left Content */}
+          <div className="animate-fade-in-up">
+            <div className="mb-6 inline-block animate-pulse-glow">
+              <span className="px-6 py-2 bg-gradient-accent text-black border-2 border-accent rounded-full text-sm font-bold tracking-widest uppercase shadow-glow">
+                Elite Subprime Specialist
               </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-gold-light to-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </Button>
-            <Button variant="outlineLight" size="xl" className="group">
-              <Phone className="mr-2 group-hover:rotate-12 transition-transform" />
-              Talk to Jason
-            </Button>
-          </div>
-
-          <div className="flex items-center gap-4 mt-8">
-            <div className="flex -space-x-2">
-              {[1, 2, 3, 4].map((i) => (
-                <div key={i} className="w-10 h-10 rounded-full bg-gradient-accent border-2 border-black" />
-              ))}
             </div>
-            <p className="text-background/90 text-sm font-medium">
-              <span className="text-accent font-bold">500+</span> approvals in the last 12 months
+            
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-background mb-6 leading-tight tracking-tight">
+              The Deal Starts When<br />
+              <span className="text-transparent bg-clip-text bg-gradient-accent">Everyone Else Says No.</span>
+            </h1>
+            
+            <p className="text-xl md:text-2xl text-silver mb-8 leading-relaxed font-medium">
+              Bad credit, new credit, bruised credit — <span className="text-accent font-bold">Jason still gets it done.</span>
+            </p>
+
+            {/* Trust Indicators */}
+            <div className="mb-8 space-y-3">
+              <div className="flex items-center gap-3 text-background/90">
+                <CheckCircle2 className="text-accent flex-shrink-0" size={24} />
+                <span className="font-medium">12+ Years Subprime Finance Expertise</span>
+              </div>
+              <div className="flex items-center gap-3 text-background/90">
+                <CheckCircle2 className="text-accent flex-shrink-0" size={24} />
+                <span className="font-medium">Fast Approvals Up to $75,000</span>
+              </div>
+              <div className="flex items-center gap-3 text-background/90">
+                <CheckCircle2 className="text-accent flex-shrink-0" size={24} />
+                <span className="font-medium">500+ Approvals in 12 Months</span>
+              </div>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4 mb-8">
+              <Button 
+                variant="premium" 
+                size="xl" 
+                className="group relative overflow-hidden"
+                onClick={handleApplyNow}
+              >
+                <span className="relative z-10 flex items-center">
+                  Check Pre-Approval Now
+                  <ArrowRight className="ml-2 group-hover:translate-x-2 transition-transform duration-300" />
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-gold-light to-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </Button>
+              <Button variant="outlineLight" size="xl" className="group">
+                <Phone className="mr-2 group-hover:rotate-12 transition-transform" />
+                Talk to Jason
+              </Button>
+            </div>
+
+            <p className="text-silver/70 text-sm italic border-l-2 border-accent pl-4">
+              No impact to your credit score. No obligation. Get approved in minutes.
             </p>
           </div>
 
-          <p className="mt-6 text-silver/70 text-sm italic border-l-2 border-accent pl-4">
-            No impact to your credit score. No obligation.
-          </p>
+          {/* Right Content - Jason's Photo */}
+          <div className="hidden lg:block animate-fade-in">
+            <div className="relative">
+              {/* Decorative elements */}
+              <div className="absolute -top-6 -right-6 w-72 h-72 bg-accent/20 rounded-full blur-3xl" />
+              <div className="absolute -bottom-6 -left-6 w-64 h-64 bg-gold/20 rounded-full blur-3xl" />
+              
+              {/* Jason's Image */}
+              <div className="relative z-10">
+                <img 
+                  src={jasonProfessional} 
+                  alt="Jason Sarac - Elite Automotive Finance Specialist"
+                  className="w-full max-w-md mx-auto rounded-2xl shadow-2xl border-4 border-accent/30 object-cover"
+                />
+                
+                {/* Badge on image */}
+                <div className="absolute bottom-6 left-6 right-6 bg-black/90 backdrop-blur-md rounded-xl p-4 border border-accent/40">
+                  <p className="text-background font-bold text-lg mb-1">Jason Sarac</p>
+                  <p className="text-accent text-sm font-semibold">Subprime Finance Expert</p>
+                  <p className="text-silver text-xs mt-1">Serving Ontario for 12+ Years</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
