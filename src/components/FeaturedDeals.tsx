@@ -32,6 +32,13 @@ const deals = [
 ];
 
 const FeaturedDeals = () => {
+  const handleApplyNow = () => {
+    // Trigger AskAva modal
+    if (window.AskAva) {
+      window.AskAva.openModal();
+    }
+  };
+
   return (
     <section className="py-24 bg-black relative overflow-hidden">
       {/* Accent Lines */}
@@ -80,7 +87,11 @@ const FeaturedDeals = () => {
                   </p>
                 </div>
 
-                <Button variant="premium" className="w-full group/btn">
+                <Button 
+                  variant="premium" 
+                  className="w-full group/btn"
+                  onClick={handleApplyNow}
+                >
                   <span className="flex items-center justify-center">
                     Get This Deal
                     <ArrowRight className="ml-2 group-hover/btn:translate-x-2 transition-transform" />
@@ -95,7 +106,12 @@ const FeaturedDeals = () => {
           <p className="text-silver mb-6 text-lg font-medium">
             These are just examples. <span className="text-accent font-bold">Jason sources exactly what you need.</span>
           </p>
-          <Button variant="hero" size="xl" className="animate-pulse-glow">
+          <Button 
+            variant="hero" 
+            size="xl" 
+            className="animate-pulse-glow"
+            onClick={handleApplyNow}
+          >
             Tell Jason What You Want
           </Button>
         </div>

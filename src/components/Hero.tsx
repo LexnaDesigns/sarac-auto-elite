@@ -112,6 +112,11 @@ const Hero = () => {
               </div>
             </div>
 
+            {/* AskAva CTA Banner */}
+            <div className="mb-6">
+              <div className="AskAva-cta" data-product="creditTool" data-type="banner"></div>
+            </div>
+
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <Button 
                 variant="premium" 
@@ -125,7 +130,12 @@ const Hero = () => {
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-gold-light to-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </Button>
-              <Button variant="outlineLight" size="xl" className="group">
+              <Button 
+                variant="outlineLight" 
+                size="xl" 
+                className="group"
+                onClick={handleApplyNow}
+              >
                 <Phone className="mr-2 group-hover:rotate-12 transition-transform" />
                 Talk to Jason
               </Button>
