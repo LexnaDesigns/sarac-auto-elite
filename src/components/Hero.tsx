@@ -37,7 +37,7 @@ const Hero = () => {
               Apply Now
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button variant="outline-light" size="xl">
+            <Button variant="outlineLight" size="xl">
               <Phone className="mr-2" />
               Talk to Jason
             </Button>
