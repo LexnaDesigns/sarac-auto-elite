@@ -1,4 +1,5 @@
 import { Quote } from "lucide-react";
+import AvaWidgetInline from "./AvaWidgetInline";
 
 const testimonials = [
   {
@@ -75,9 +76,22 @@ const ClientWins = () => {
         </div>
 
         <div className="mt-12 text-center">
-          <p className="text-muted-foreground italic">
+          <p className="text-muted-foreground italic mb-12">
             These are real client outcomes. Your results will vary based on your unique situation.
           </p>
+        </div>
+
+        {/* AVA Widget CTA */}
+        <div className="mt-16 max-w-4xl mx-auto animate-fade-in-up">
+          <div className="text-center mb-8">
+            <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Your Success Story <span className="text-accent">Starts Here</span>
+            </h3>
+            <p className="text-xl text-muted-foreground">
+              Join hundreds of satisfied clients who got approved when others said no
+            </p>
+          </div>
+          <AvaWidgetInline />
         </div>
       </div>
     </section>

@@ -3,6 +3,8 @@ import { useEffect, useRef } from "react";
 import heroImage from "@/assets/hero-bg.jpg";
 import heroVideo from "@/assets/FINALEDIT1.mp4";
 import jasonProfessional from "@/assets/jason-professional.jpeg";
+import AvaWidgetHero from "./AvaWidgetHero";
+import AvaWidgetButton from "./AvaWidgetButton";
 
 const Hero = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -104,9 +106,14 @@ const Hero = () => {
               </div>
             </div>
 
-            <p className="text-silver/70 text-sm italic border-l-2 border-accent pl-4 mt-8">
+            <p className="text-silver/70 text-sm italic border-l-2 border-accent pl-4 mt-8 mb-8">
               No impact to your credit score. No obligation. Get approved in minutes.
             </p>
+
+            {/* AVA Credit Widget Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up">
+              <AvaWidgetButton className="flex-1" />
+            </div>
           </div>
 
           {/* Right Content - Jason's Photo */}
@@ -133,6 +140,11 @@ const Hero = () => {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* AVA Widget Hero Banner - Full Width at Bottom of Hero */}
+        <div className="mt-16 animate-fade-in-up">
+          <AvaWidgetHero />
         </div>
       </div>
 

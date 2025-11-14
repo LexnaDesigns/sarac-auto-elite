@@ -1,4 +1,5 @@
 import { CheckCircle2, TrendingUp, Users, Truck, Shield } from "lucide-react";
+import AvaWidgetInline from "./AvaWidgetInline";
 
 const advantages = [
   {
@@ -67,6 +68,19 @@ const SaracAdvantage = () => {
               </div>
             );
           })}
+        </div>
+
+        {/* AVA Widget CTA */}
+        <div className="mt-16 max-w-4xl mx-auto animate-fade-in-up">
+          <div className="text-center mb-8">
+            <h3 className="text-3xl md:text-4xl font-bold text-background mb-4">
+              Experience the <span className="text-accent">Sarac Advantage</span>
+            </h3>
+            <p className="text-xl text-silver">
+              See if you qualify for financing in minutes
+            </p>
+          </div>
+          <AvaWidgetInline />
         </div>
       </div>
     </section>

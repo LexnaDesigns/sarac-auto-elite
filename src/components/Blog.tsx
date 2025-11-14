@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar, Clock } from "lucide-react";
+import AvaWidgetInline from "./AvaWidgetInline";
 
 interface BlogPost {
   id: number;
@@ -128,27 +129,20 @@ const Blog = () => {
           ))}
         </div>
 
-        {/* CTA Section */}
-        <div className="text-center bg-gradient-to-r from-accent/10 via-gold/10 to-accent/10 border border-accent/30 rounded-2xl p-12 animate-fade-in-up">
-          <h3 className="text-3xl font-bold text-background mb-4">
-            Ready to Get <span className="text-accent">Pre-Approved?</span>
-          </h3>
-          <p className="text-silver text-lg mb-6 max-w-2xl mx-auto">
-            Don't let credit challenges hold you back. See if you qualify for automotive financing in minutes.
-          </p>
-          <Button 
-            variant="premium" 
-            size="lg"
-            onClick={() => window.AskAva?.openModal()}
-            className="group relative overflow-hidden"
-          >
-            <span className="relative z-10 flex items-center">
-              Check Your Pre-Approval
-              <ArrowRight className="ml-2 group-hover:translate-x-2 transition-transform duration-300" />
-            </span>
-            <div className="absolute inset-0 bg-gradient-to-r from-gold-light to-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          </Button>
-          <p className="text-silver/60 text-sm mt-4">No credit impact. No obligation. Results in minutes.</p>
+        {/* AVA Credit Widget CTA Section */}
+        <div className="bg-gradient-to-r from-accent/10 via-gold/10 to-accent/10 border border-accent/30 rounded-2xl p-12 animate-fade-in-up">
+          <div className="text-center mb-8">
+            <h3 className="text-3xl font-bold text-background mb-4">
+              Ready to Get <span className="text-accent">Pre-Approved?</span>
+            </h3>
+            <p className="text-silver text-lg max-w-2xl mx-auto">
+              Don't let credit challenges hold you back. Check your credit and get pre-approved in minutes.
+            </p>
+          </div>
+          
+          <AvaWidgetInline className="max-w-3xl mx-auto" />
+          
+          <p className="text-silver/60 text-sm mt-6 text-center">No credit impact. No obligation. Results in minutes.</p>
         </div>
       </div>
     </section>
