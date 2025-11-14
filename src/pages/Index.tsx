@@ -1,3 +1,4 @@
+import StickyBanner from "@/components/StickyBanner";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import SaracAdvantage from "@/components/SaracAdvantage";
@@ -13,6 +14,7 @@ import Footer from "@/components/Footer";
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <StickyBanner />
       <Header />
       <Hero />
       <div id="advantage">

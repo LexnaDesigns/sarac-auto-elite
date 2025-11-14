@@ -1,5 +1,4 @@
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Phone, CheckCircle2 } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import { useEffect, useRef } from "react";
 import heroImage from "@/assets/hero-bg.jpg";
 import heroVideo from "@/assets/FINALEDIT1.mp4";
@@ -37,15 +36,8 @@ const Hero = () => {
     };
   }, []);
 
-  const handleApplyNow = () => {
-    // Trigger AskAva modal
-    if (window.AskAva) {
-      window.AskAva.openModal();
-    }
-  };
-
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-black pt-20">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-black pt-[132px]">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-20 left-20 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-pulse-glow" />
@@ -112,36 +104,7 @@ const Hero = () => {
               </div>
             </div>
 
-            {/* AskAva CTA Banner */}
-            <div className="mb-6">
-              <div className="AskAva-cta" data-product="creditTool" data-type="banner"></div>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <Button 
-                variant="premium" 
-                size="xl" 
-                className="group relative overflow-hidden"
-                onClick={handleApplyNow}
-              >
-                <span className="relative z-10 flex items-center">
-                  Check Pre-Approval Now
-                  <ArrowRight className="ml-2 group-hover:translate-x-2 transition-transform duration-300" />
-                </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-gold-light to-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </Button>
-              <Button 
-                variant="outlineLight" 
-                size="xl" 
-                className="group"
-                onClick={handleApplyNow}
-              >
-                <Phone className="mr-2 group-hover:rotate-12 transition-transform" />
-                Talk to Jason
-              </Button>
-            </div>
-
-            <p className="text-silver/70 text-sm italic border-l-2 border-accent pl-4">
+            <p className="text-silver/70 text-sm italic border-l-2 border-accent pl-4 mt-8">
               No impact to your credit score. No obligation. Get approved in minutes.
             </p>
           </div>

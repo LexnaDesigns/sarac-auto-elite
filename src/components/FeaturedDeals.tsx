@@ -1,5 +1,3 @@
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
 import bmwImage from "@/assets/car-bmw.jpg";
 import mercedesImage from "@/assets/car-mercedes.jpg";
 import audiImage from "@/assets/car-audi.jpg";
@@ -32,13 +30,6 @@ const deals = [
 ];
 
 const FeaturedDeals = () => {
-  const handleApplyNow = () => {
-    // Trigger AskAva modal
-    if (window.AskAva) {
-      window.AskAva.openModal();
-    }
-  };
-
   return (
     <section className="py-24 bg-black relative overflow-hidden">
       {/* Accent Lines */}
@@ -80,40 +71,21 @@ const FeaturedDeals = () => {
                 </h3>
                 <p className="text-lg text-silver mb-6 font-semibold">{deal.model}</p>
                 
-                <div className="bg-primary/30 border border-accent/30 rounded-lg p-5 mb-6 group-hover:bg-primary/50 transition-colors">
+                <div className="bg-primary/30 border border-accent/30 rounded-lg p-5 group-hover:bg-primary/50 transition-colors">
                   <p className="text-sm text-silver leading-relaxed">
                     <span className="font-bold text-accent uppercase tracking-wide">Why Jason picked this:</span>{" "}
                     <span className="text-background">{deal.reason}</span>
                   </p>
                 </div>
-
-                <Button 
-                  variant="premium" 
-                  className="w-full group/btn"
-                  onClick={handleApplyNow}
-                >
-                  <span className="flex items-center justify-center">
-                    Get This Deal
-                    <ArrowRight className="ml-2 group-hover/btn:translate-x-2 transition-transform" />
-                  </span>
-                </Button>
               </div>
             </div>
           ))}
         </div>
 
         <div className="text-center bg-gradient-dark border-2 border-accent/30 rounded-xl p-8">
-          <p className="text-silver mb-6 text-lg font-medium">
+          <p className="text-silver text-lg font-medium">
             These are just examples. <span className="text-accent font-bold">Jason sources exactly what you need.</span>
           </p>
-          <Button 
-            variant="hero" 
-            size="xl" 
-            className="animate-pulse-glow"
-            onClick={handleApplyNow}
-          >
-            Tell Jason What You Want
-          </Button>
         </div>
       </div>
     </section>

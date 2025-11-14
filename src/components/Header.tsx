@@ -6,13 +6,6 @@ import saracLogo from "@/assets/sarac-logo.jpeg";
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const handleCheckPreApproval = () => {
-    // Trigger AskAva modal
-    if (window.AskAva) {
-      window.AskAva.openModal();
-    }
-  };
-
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -22,7 +15,7 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-lg border-b border-accent/20">
+    <header className="fixed top-[52px] left-0 right-0 z-50 bg-black/95 backdrop-blur-lg border-b border-accent/20">
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -72,8 +65,8 @@ const Header = () => {
             </button>
           </nav>
 
-          {/* CTA Buttons */}
-          <div className="hidden lg:flex items-center space-x-4">
+          {/* Contact Phone */}
+          <div className="hidden lg:flex items-center">
             <Button 
               variant="outline" 
               size="sm" 
@@ -81,15 +74,6 @@ const Header = () => {
             >
               <Phone className="mr-2 h-4 w-4" />
               <span className="font-semibold">(555) 123-4567</span>
-            </Button>
-            <Button 
-              variant="premium" 
-              size="sm"
-              onClick={handleCheckPreApproval}
-              className="relative overflow-hidden group"
-            >
-              <span className="relative z-10 font-bold">Check Your Pre-Approval</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-gold-light to-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </Button>
           </div>
 
@@ -137,7 +121,7 @@ const Header = () => {
               >
                 About Jason
               </button>
-              <div className="pt-4 space-y-3">
+              <div className="pt-4">
                 <Button 
                   variant="outline" 
                   size="sm" 
@@ -145,14 +129,6 @@ const Header = () => {
                 >
                   <Phone className="mr-2 h-4 w-4" />
                   <span className="font-semibold">(555) 123-4567</span>
-                </Button>
-                <Button 
-                  variant="premium" 
-                  size="sm"
-                  onClick={handleCheckPreApproval}
-                  className="w-full font-bold"
-                >
-                  Check Your Pre-Approval
                 </Button>
               </div>
             </nav>

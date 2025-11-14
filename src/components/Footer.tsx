@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
 const Footer = () => {
@@ -11,16 +10,9 @@ const Footer = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Limited Availability
             </h2>
-            <p className="text-xl text-primary-foreground/80 mb-8">
-              Jason takes a limited number of clients each month to keep approvals fast and personal. Apply now to secure your spot.
+            <p className="text-xl text-primary-foreground/80">
+              Jason takes a limited number of clients each month to keep approvals fast and personal.
             </p>
-            <Button 
-              variant="premium" 
-              size="xl"
-              onClick={() => window.AskAva?.openModal()}
-            >
-              Apply Today
-            </Button>
           </div>
         </div>
       </div>
@@ -79,11 +71,6 @@ const Footer = () => {
           <div>
             <h3 className="text-2xl font-bold mb-6">Quick Links</h3>
             <ul className="space-y-3">
-              <li>
-                <a href="#apply" className="text-primary-foreground/80 hover:text-accent transition-colors">
-                  Apply Now
-                </a>
-              </li>
               <li>
                 <a href="#deals" className="text-primary-foreground/80 hover:text-accent transition-colors">
                   Featured Deals

@@ -1,15 +1,6 @@
-import { Button } from "@/components/ui/button";
-import { Phone, Mail } from "lucide-react";
 import jasonImage from "@/assets/jason-headshot.jpg";
 
 const AboutJason = () => {
-  const handleApplyNow = () => {
-    // Trigger AskAva modal
-    if (window.AskAva) {
-      window.AskAva.openModal();
-    }
-  };
-
   return (
     <section className="py-24 bg-muted/30">
       <div className="container mx-auto px-6">
@@ -55,25 +46,6 @@ const AboutJason = () => {
                 <p className="font-semibold text-foreground">
                   His philosophy: Every "no" is just a puzzle to solve. And Jason solves puzzles for a living.
                 </p>
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button 
-                  variant="hero" 
-                  size="lg"
-                  onClick={handleApplyNow}
-                >
-                  <Phone className="mr-2" />
-                  Talk to Jason
-                </Button>
-                <Button 
-                  variant="outline" 
-                  size="lg"
-                  onClick={handleApplyNow}
-                >
-                  <Mail className="mr-2" />
-                  Start Application
-                </Button>
               </div>
             </div>
           </div>
