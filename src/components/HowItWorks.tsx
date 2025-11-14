@@ -1,4 +1,5 @@
 import { MessageSquare, CheckCircle, Key } from "lucide-react";
+import AvaWidgetButton from "./AvaWidgetButton";
 
 const steps = [
   {
@@ -78,6 +79,19 @@ const HowItWorks = () => {
               </div>
             );
           })}
+        </div>
+
+        {/* AVA Widget CTA */}
+        <div className="mt-16 text-center max-w-2xl mx-auto animate-fade-in-up">
+          <div className="mb-6">
+            <h3 className="text-3xl font-bold text-background mb-3">
+              Ready to Start Your Journey?
+            </h3>
+            <p className="text-xl text-background/90">
+              Get pre-approved in minutes with our fast credit check
+            </p>
+          </div>
+          <AvaWidgetButton className="inline-block" />
         </div>
       </div>
     </section>

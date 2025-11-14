@@ -1,3 +1,5 @@
+import AvaWidgetEmbed from "./AvaWidgetEmbed";
+import AvaWidgetInline from "./AvaWidgetInline";
 import { CheckCircle2 } from "lucide-react";
 
 const ApplicationForm = () => {
@@ -16,7 +18,7 @@ const ApplicationForm = () => {
               Ready to Get <span className="text-transparent bg-clip-text bg-gradient-accent">Pre-Approved?</span>
             </h2>
             <p className="text-xl md:text-2xl text-silver mb-8 font-medium">
-              Start your application with Jason in minutes — no credit impact, no obligation.
+              Check your credit and get pre-approved in minutes — no hard credit check, no obligation.
             </p>
           </div>
 
@@ -40,17 +42,27 @@ const ApplicationForm = () => {
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="text-accent flex-shrink-0 mt-1" size={24} />
                 <div>
-                  <p className="text-background font-bold mb-1">Personal Review</p>
-                  <p className="text-silver/80 text-sm">Jason reviews every application</p>
+                  <p className="text-background font-bold mb-1">Instant Results</p>
+                  <p className="text-silver/80 text-sm">Get approved in minutes</p>
                 </div>
               </div>
             </div>
 
-            <div className="text-center">
+            <div className="text-center mb-6">
               <p className="text-silver/70 text-base italic">
                 Get approved in minutes • Financing up to $75,000 • Bad credit specialists
               </p>
             </div>
+          </div>
+
+          {/* AVA Credit Widget - Embed Style */}
+          <div className="animate-fade-in-up">
+            <AvaWidgetEmbed className="mb-8" />
+          </div>
+
+          {/* Additional Inline Widget */}
+          <div className="mt-12 animate-fade-in-up">
+            <AvaWidgetInline />
           </div>
         </div>
       </div>

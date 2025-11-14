@@ -9,10 +9,12 @@ import Blog from "@/components/Blog";
 import ApplicationForm from "@/components/ApplicationForm";
 import AboutJason from "@/components/AboutJason";
 import Footer from "@/components/Footer";
+import AvaWidgetBanner from "@/components/AvaWidgetBanner";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <AvaWidgetBanner />
       <Header />
       <Hero />
       <div id="advantage">

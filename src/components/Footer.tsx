@@ -1,18 +1,30 @@
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { MapPin, Clock } from "lucide-react";
+import AvaWidgetInline from "./AvaWidgetInline";
+import AvaWidgetButton from "./AvaWidgetButton";
 
 const Footer = () => {
   return (
     <footer className="bg-primary text-primary-foreground">
-      {/* Urgency CTA Section */}
-      <div className="border-b border-primary-foreground/10">
+      {/* AVA Credit Widget CTA Section */}
+      <div className="border-b border-primary-foreground/10 bg-gradient-to-br from-primary via-charcoal to-primary">
         <div className="container mx-auto px-6 py-16">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Limited Availability
-            </h2>
-            <p className="text-xl text-primary-foreground/80">
-              Jason takes a limited number of clients each month to keep approvals fast and personal.
-            </p>
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-background">
+                Ready to Get <span className="text-accent">Started?</span>
+              </h2>
+              <p className="text-xl text-primary-foreground/90">
+                Check your credit and get pre-approved in minutes — no hard credit check required.
+              </p>
+            </div>
+            
+            {/* AVA Widget Inline */}
+            <AvaWidgetInline className="mb-6" />
+            
+            {/* AVA Widget Button as secondary option */}
+            <div className="flex justify-center mt-6">
+              <AvaWidgetButton />
+            </div>
           </div>
         </div>
       </div>
@@ -20,50 +32,35 @@ const Footer = () => {
       {/* Main Footer Content */}
       <div className="container mx-auto px-6 py-12">
         <div className="grid md:grid-cols-3 gap-12">
-          {/* Contact Info */}
+          {/* Service Area Info */}
           <div>
-            <h3 className="text-2xl font-bold mb-6">Get In Touch</h3>
+            <h3 className="text-2xl font-bold mb-6">Service Area</h3>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
-                <Phone className="w-5 h-5 mt-1 flex-shrink-0" />
-                <div>
-                  <p className="font-semibold">Phone</p>
-                  <a href="tel:+1234567890" className="text-primary-foreground/80 hover:text-accent transition-colors">
-                    (416) 555-DEAL
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3">
-                <Mail className="w-5 h-5 mt-1 flex-shrink-0" />
-                <div>
-                  <p className="font-semibold">Email</p>
-                  <a href="mailto:jason@saracfinance.com" className="text-primary-foreground/80 hover:text-accent transition-colors">
-                    jason@saracfinance.com
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 mt-1 flex-shrink-0" />
+                <MapPin className="w-5 h-5 mt-1 flex-shrink-0 text-accent" />
                 <div>
                   <p className="font-semibold">Serving</p>
                   <p className="text-primary-foreground/80">
-                    Greater Toronto Area & Ontario
+                    Greater Toronto Area & All of Ontario
                   </p>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
-                <Clock className="w-5 h-5 mt-1 flex-shrink-0" />
+                <Clock className="w-5 h-5 mt-1 flex-shrink-0 text-accent" />
                 <div>
-                  <p className="font-semibold">Hours</p>
+                  <p className="font-semibold">Availability</p>
                   <p className="text-primary-foreground/80">
                     Mon-Sat: 9AM - 8PM<br />
                     Sunday: By Appointment
                   </p>
                 </div>
               </div>
+            </div>
+
+            {/* AVA Widget in Footer */}
+            <div className="mt-6">
+              <AvaWidgetButton className="w-full" />
             </div>
           </div>
 

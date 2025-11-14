@@ -1,5 +1,4 @@
-import { Button } from "@/components/ui/button";
-import { Phone, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import saracLogo from "@/assets/sarac-logo.jpeg";
 
@@ -65,18 +64,6 @@ const Header = () => {
             </button>
           </nav>
 
-          {/* Contact Phone */}
-          <div className="hidden lg:flex items-center">
-            <Button 
-              variant="outline" 
-              size="sm" 
-              className="border-silver text-background hover:bg-silver/10"
-            >
-              <Phone className="mr-2 h-4 w-4" />
-              <span className="font-semibold">(555) 123-4567</span>
-            </Button>
-          </div>
-
           {/* Mobile Menu Button */}
           <button
             className="lg:hidden text-background p-2"
@@ -121,16 +108,6 @@ const Header = () => {
               >
                 About Jason
               </button>
-              <div className="pt-4">
-                <Button 
-                  variant="outline" 
-                  size="sm" 
-                  className="w-full border-silver text-background hover:bg-silver/10"
-                >
-                  <Phone className="mr-2 h-4 w-4" />
-                  <span className="font-semibold">(555) 123-4567</span>
-                </Button>
-              </div>
             </nav>
           </div>
         )}
