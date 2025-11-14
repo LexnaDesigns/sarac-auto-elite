@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar, Clock } from "lucide-react";
+import { Link } from "react-router-dom";
 import AvaWidgetInline from "./AvaWidgetInline";
 
 interface BlogPost {
@@ -10,53 +11,59 @@ interface BlogPost {
   readTime: string;
   category: string;
   image: string;
+  slug: string;
 }
 
 const blogPosts: BlogPost[] = [
   {
     id: 1,
-    title: "How to Get Approved for a Car Loan with Bad Credit in Ontario",
+    title: "How to Get Approved for Auto Financing with Bad Credit",
     excerpt: "Discover the proven strategies that help thousands of Canadians secure automotive financing, even with challenged credit scores. Learn what lenders really look for and how to maximize your approval chances.",
     date: "November 10, 2025",
-    readTime: "5 min read",
+    readTime: "8 min read",
     category: "Credit Tips",
-    image: "https://www.shutterstock.com/image-photo/customer-signs-rental-agreement-new-260nw-2495509313.jpg"
+    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800",
+    slug: "/blog/bad-credit-auto-financing"
   },
   {
     id: 2,
-    title: "Understanding Subprime Auto Lending: A Complete Guide",
-    excerpt: "Subprime lending isn't what you think. Get the insider's perspective on how subprime automotive finance actually works, who qualifies, and why it might be the perfect solution for your situation.",
+    title: "Understanding Your Credit Score: What Lenders Really Look For",
+    excerpt: "Decode your credit score and learn what auto lenders actually care about. Expert insights on credit factors, scoring models, and how to improve your approval odds.",
     date: "November 5, 2025",
-    readTime: "7 min read",
+    readTime: "10 min read",
     category: "Finance Education",
-    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800"
+    image: "https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&q=80&w=800",
+    slug: "/blog/understanding-credit-score"
   },
   {
     id: 3,
-    title: "5 Common Mistakes That Could Ruin Your Auto Loan Application",
+    title: "5 Common Auto Loan Mistakes (And How to Avoid Them)",
     excerpt: "Don't let these avoidable errors cost you thousands or destroy your chances of approval. Learn from 12+ years of subprime finance expertise what NOT to do when applying for automotive financing.",
     date: "October 28, 2025",
-    readTime: "6 min read",
+    readTime: "9 min read",
     category: "Application Tips",
-    image: "https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&q=80&w=800"
+    image: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&q=80&w=800",
+    slug: "/blog/auto-loan-mistakes"
   },
   {
     id: 4,
-    title: "Rebuilding Credit Through Automotive Financing: A Strategic Approach",
+    title: "Rebuilding Credit Through Auto Financing: A Step-by-Step Guide",
     excerpt: "Your car loan can be your ticket to better credit. Discover how strategic automotive financing can help rebuild your credit score while getting you into the vehicle you need.",
     date: "October 20, 2025",
-    readTime: "8 min read",
+    readTime: "10 min read",
     category: "Credit Building",
-    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&q=80&w=800"
+    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&q=80&w=800",
+    slug: "/blog/rebuilding-credit"
   },
   {
     id: 5,
-    title: "First-Time Buyer's Guide: Getting Your First Auto Loan in Canada",
-    excerpt: "No credit history? No problem. Learn exactly what first-time car buyers need to know about securing financing, building credit, and getting the best deal on your first vehicle purchase.",
-    date: "October 12, 2025",
-    readTime: "6 min read",
-    category: "First-Time Buyers",
-    image: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&q=80&w=800"
+    title: "New vs. Used Cars: Which is Better for Your Budget?",
+    excerpt: "Should you buy new or used? Get expert advice on making the right choice for your budget and credit situation. Real-world analysis from automotive finance specialist Jason Sarac.",
+    date: "November 3, 2025",
+    readTime: "9 min read",
+    category: "Buyer's Guide",
+    image: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&q=80&w=800",
+    slug: "/blog/new-vs-used-cars"
   }
 ];
 
@@ -117,13 +124,15 @@ const Blog = () => {
                   {post.excerpt}
                 </p>
 
-                <Button 
-                  variant="link" 
-                  className="text-accent hover:text-accent/80 p-0 group/btn"
-                >
-                  Read Full Article
-                  <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
-                </Button>
+                <Link to={post.slug}>
+                  <Button 
+                    variant="link" 
+                    className="text-accent hover:text-accent/80 p-0 group/btn"
+                  >
+                    Read Full Article
+                    <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
+                  </Button>
+                </Link>
               </div>
             </article>
           ))}

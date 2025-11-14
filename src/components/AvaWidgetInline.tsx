@@ -1,4 +1,5 @@
 
+
 interface AvaWidgetInlineProps {
   className?: string;
 }
@@ -6,7 +7,7 @@ interface AvaWidgetInlineProps {
 const AvaWidgetInline = ({ className = "" }: AvaWidgetInlineProps) => {
   return (
     <div className={className}>
-      <div className="AskAva-cta" data-product="creditTool" data-type="inline"></div>
+      <div className="AskAva-cta" data-product="creditTool" data-type="inline" data-widget-id="abe84ce31305"></div>
     </div>
   );
 };
