@@ -1,9 +1,11 @@
-import { Menu, X } from "lucide-react";
+import { Menu, X, Globe } from "lucide-react";
 import { useState } from "react";
 import saracLogo from "@/assets/sarac-logo.jpeg";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -14,7 +16,7 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-[52px] left-0 right-0 z-50 bg-black/95 backdrop-blur-lg border-b border-accent/20">
+    <header className="fixed top-[38px] left-0 right-0 z-50 bg-black/95 backdrop-blur-lg border-b border-accent/20">
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -36,31 +38,41 @@ const Header = () => {
               onClick={() => scrollToSection('advantage')}
               className="text-background hover:text-accent transition-colors font-medium"
             >
-              Why Choose Us
+              {t.nav.whyChooseUs}
             </button>
             <button 
               onClick={() => scrollToSection('how-it-works')}
               className="text-background hover:text-accent transition-colors font-medium"
             >
-              How It Works
+              {t.nav.howItWorks}
             </button>
             <button 
               onClick={() => scrollToSection('testimonials')}
               className="text-background hover:text-accent transition-colors font-medium"
             >
-              Success Stories
+              {t.nav.successStories}
             </button>
             <button 
               onClick={() => scrollToSection('blog')}
               className="text-background hover:text-accent transition-colors font-medium"
             >
-              Blog
+              {t.nav.blog}
             </button>
             <button 
               onClick={() => scrollToSection('about')}
               className="text-background hover:text-accent transition-colors font-medium"
             >
-              About Jason
+              {t.nav.aboutJason}
+            </button>
+            
+            {/* Language Toggle */}
+            <button
+              onClick={() => setLanguage(language === 'en' ? 'fr' : 'en')}
+              className="flex items-center gap-2 text-background hover:text-accent transition-colors font-medium px-3 py-2 rounded-lg border border-accent/30 hover:border-accent"
+              aria-label="Toggle language"
+            >
+              <Globe size={18} />
+              <span className="text-sm font-bold">{language === 'en' ? 'FR' : 'EN'}</span>
             </button>
           </nav>
 
@@ -82,31 +94,41 @@ const Header = () => {
                 onClick={() => scrollToSection('advantage')}
                 className="text-background hover:text-accent transition-colors font-medium text-left"
               >
-                Why Choose Us
+                {t.nav.whyChooseUs}
               </button>
               <button 
                 onClick={() => scrollToSection('how-it-works')}
                 className="text-background hover:text-accent transition-colors font-medium text-left"
               >
-                How It Works
+                {t.nav.howItWorks}
               </button>
               <button 
                 onClick={() => scrollToSection('testimonials')}
                 className="text-background hover:text-accent transition-colors font-medium text-left"
               >
-                Success Stories
+                {t.nav.successStories}
               </button>
               <button 
                 onClick={() => scrollToSection('blog')}
                 className="text-background hover:text-accent transition-colors font-medium text-left"
               >
-                Blog
+                {t.nav.blog}
               </button>
               <button 
                 onClick={() => scrollToSection('about')}
                 className="text-background hover:text-accent transition-colors font-medium text-left"
               >
-                About Jason
+                {t.nav.aboutJason}
+              </button>
+              
+              {/* Language Toggle - Mobile */}
+              <button
+                onClick={() => setLanguage(language === 'en' ? 'fr' : 'en')}
+                className="flex items-center gap-2 text-background hover:text-accent transition-colors font-medium px-3 py-2 rounded-lg border border-accent/30 hover:border-accent w-fit"
+                aria-label="Toggle language"
+              >
+                <Globe size={18} />
+                <span className="text-sm font-bold">{language === 'en' ? 'Français' : 'English'}</span>
               </button>
             </nav>
           </div>

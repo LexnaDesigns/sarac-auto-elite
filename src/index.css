@@ -69,3 +69,33 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
   }
 }
+
+/* AVA Widget Size Customization - Make less intrusive */
+.AskAva-cta {
+  transform: scale(0.85);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.AskAva-cta:hover {
+  transform: scale(0.9);
+}
+
+/* Specific sizing for different widget types */
+.AskAva-cta[data-type="banner"] {
+  transform: scale(0.75);
+  max-height: 40px;
+  overflow: hidden;
+}
+
+.AskAva-cta[data-type="button"] {
+  transform: scale(0.8);
+}
+
+.AskAva-cta[data-type="inline"] {
+  transform: scale(0.85);
+}
+
+.AskAva-cta[data-type="banner-hero"] {
+  transform: scale(0.85);
+}
