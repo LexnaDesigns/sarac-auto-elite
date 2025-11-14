@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- Home Page - English -->
+  <url>
+    <loc>https://saracfinancial.com/</loc>
+    <lastmod>2025-11-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://saracfinancial.com/fr" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://saracfinancial.com/" />
+  </url>
+
+  <!-- Home Page - French -->
+  <url>
+    <loc>https://saracfinancial.com/fr</loc>
+    <lastmod>2025-11-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://saracfinancial.com/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://saracfinancial.com/fr" />
+  </url>
+
+  <!-- About Jason Section -->
+  <url>
+    <loc>https://saracfinancial.com/#about</loc>
+    <lastmod>2025-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://saracfinancial.com/fr#about" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://saracfinancial.com/#about" />
+  </url>
+
+  <!-- How It Works Section -->
+  <url>
+    <loc>https://saracfinancial.com/#how-it-works</loc>
+    <lastmod>2025-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://saracfinancial.com/fr#how-it-works" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://saracfinancial.com/#how-it-works" />
+  </url>
+
+  <!-- Testimonials Section -->
+  <url>
+    <loc>https://saracfinancial.com/#testimonials</loc>
+    <lastmod>2025-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://saracfinancial.com/fr#testimonials" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://saracfinancial.com/#testimonials" />
+  </url>
+
+  <!-- Blog Section -->
+  <url>
+    <loc>https://saracfinancial.com/#blog</loc>
+    <lastmod>2025-11-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://saracfinancial.com/fr#blog" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://saracfinancial.com/#blog" />
+  </url>
+
+  <!-- Advantage Section -->
+  <url>
+    <loc>https://saracfinancial.com/#advantage</loc>
+    <lastmod>2025-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://saracfinancial.com/fr#advantage" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://saracfinancial.com/#advantage" />
+  </url>
+
+</urlset>

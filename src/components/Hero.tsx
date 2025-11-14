@@ -5,9 +5,11 @@ import heroVideo from "@/assets/FINALEDIT1.mp4";
 import jasonProfessional from "@/assets/jason-professional.jpeg";
 import AvaWidgetHero from "./AvaWidgetHero";
 import AvaWidgetButton from "./AvaWidgetButton";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Hero = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const video = videoRef.current;
@@ -39,7 +41,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-black pt-[132px]">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-black pt-[118px]">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-20 left-20 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-pulse-glow" />
@@ -77,37 +79,37 @@ const Hero = () => {
           <div className="animate-fade-in-up">
             <div className="mb-6 inline-block animate-pulse-glow">
               <span className="px-6 py-2 bg-gradient-accent text-black border-2 border-accent rounded-full text-sm font-bold tracking-widest uppercase shadow-glow">
-                Elite Subprime Specialist
+                {t.hero.badge}
               </span>
             </div>
             
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-background mb-6 leading-tight tracking-tight">
-              The Deal Starts When<br />
-              <span className="text-transparent bg-clip-text bg-gradient-accent">Everyone Else Says No.</span>
+              {t.hero.headline}<br />
+              <span className="text-transparent bg-clip-text bg-gradient-accent">{t.hero.headlineAccent}</span>
             </h1>
             
             <p className="text-xl md:text-2xl text-silver mb-8 leading-relaxed font-medium">
-              Bad credit, new credit, bruised credit — <span className="text-accent font-bold">Jason still gets it done.</span>
+              {t.hero.subheadline}<span className="text-accent font-bold">{t.hero.subheadlineAccent}</span>
             </p>
 
             {/* Trust Indicators */}
             <div className="mb-8 space-y-3">
               <div className="flex items-center gap-3 text-background/90">
                 <CheckCircle2 className="text-accent flex-shrink-0" size={24} />
-                <span className="font-medium">12+ Years Subprime Finance Expertise</span>
+                <span className="font-medium">{t.hero.trust1}</span>
               </div>
               <div className="flex items-center gap-3 text-background/90">
                 <CheckCircle2 className="text-accent flex-shrink-0" size={24} />
-                <span className="font-medium">Fast Approvals Up to $75,000</span>
+                <span className="font-medium">{t.hero.trust2}</span>
               </div>
               <div className="flex items-center gap-3 text-background/90">
                 <CheckCircle2 className="text-accent flex-shrink-0" size={24} />
-                <span className="font-medium">500+ Approvals in 12 Months</span>
+                <span className="font-medium">{t.hero.trust3}</span>
               </div>
             </div>
 
             <p className="text-silver/70 text-sm italic border-l-2 border-accent pl-4 mt-8 mb-8">
-              No impact to your credit score. No obligation. Get approved in minutes.
+              {t.hero.disclaimer}
             </p>
 
             {/* AVA Credit Widget Buttons */}
